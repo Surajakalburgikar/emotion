@@ -6,6 +6,8 @@ This guide serves as a comprehensive **Technical Reference and Presentation/Viva
 
 ## 🗺️ System Architecture
 
+![System Architecture](system_architecture.png)
+
 The following Mermaid diagram visualizes the end-to-end data flow, request routing, and automatic model fallback logic of the application:
 
 ```mermaid
