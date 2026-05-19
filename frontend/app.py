@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ─── Custom CSS ────────────────────────────────────────────────────────────────
+# ─── Custom CSS (Monochromatic Black, Silver, and White Palette) ────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -27,28 +27,28 @@ html, body, [class*="css"] {
     width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
     border-radius: 999px;
 }
 
-/* Dark background */
+/* Dark background - Pure Matte Black and charcoal gradient */
 .stApp {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, #09090b, #121214, #18181b);
     min-height: 100vh;
 }
 
-/* Sidebar styling */
+/* Sidebar styling - Darkest Jet Black */
 [data-testid="stSidebar"] {
-    background-color: rgba(15, 12, 41, 0.96) !important;
-    border-right: 1px solid rgba(255,255,255,0.08) !important;
+    background-color: rgba(9, 9, 11, 0.98) !important;
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
 }
 
-/* Hero header */
+/* Hero header - Premium White-Silver Gradient */
 .hero-title {
     text-align: center;
     font-size: 2.6rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+    background: linear-gradient(90deg, #ffffff, #e4e4e7, #a1a1aa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 0rem; 
@@ -57,8 +57,8 @@ html, body, [class*="css"] {
 
 /* Card container for results */
 .glass-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 14px;
     padding: 1.5rem;
     backdrop-filter: blur(12px);
@@ -75,15 +75,15 @@ html, body, [class*="css"] {
 }
 .metric-box {
     flex: 1;
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
     border-radius: 10px;
     padding: 0.8rem;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 .metric-label {
     font-size: 0.7rem;
-    color: #94a3b8;
+    color: #71717a;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 0.2rem;
@@ -91,54 +91,70 @@ html, body, [class*="css"] {
 .metric-value {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #f4f4f5;
 }
 
-/* Sidebar History item */
+/* Sidebar History item - Silver left border */
 .history-item {
-    background: rgba(255,255,255,0.03);
-    border-left: 3px solid #60a5fa;
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid #d4d4d8;
     border-radius: 0 8px 8px 0;
     padding: 0.5rem 0.7rem;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
-    color: #cbd5e1;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    border-right: 1px solid rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #e4e4e7;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-right: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-/* Override streamlit elements to look premium */
+/* Override Streamlit text area to be extremely sleek */
 .stTextArea textarea {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,255,255,0.12) !important;
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
     border-radius: 10px !important;
-    color: #e2e8f0 !important;
+    color: #f4f4f5 !important;
     font-size: 0.95rem !important;
 }
+
+/* Sleek Monochromatic Button - Pure White with black text */
 .stButton > button {
     width: 100%;
     border-radius: 10px !important;
     padding: 0.65rem !important;
     font-weight: 600 !important;
     font-size: 0.95rem !important;
-    background: linear-gradient(90deg, #7c3aed, #3b82f6) !important;
-    border: none !important;
-    color: white !important;
-    transition: transform 0.1s ease, opacity 0.2s ease !important;
+    background: linear-gradient(90deg, #ffffff, #e4e4e7) !important;
+    border: 1px solid #ffffff !important;
+    color: #09090b !important;
+    transition: transform 0.1s ease, background 0.2s ease !important;
 }
-.stButton > button:hover { opacity: 0.9 !important; }
-.stButton > button:active { transform: scale(0.99); }
+.stButton > button:hover {
+    background: linear-gradient(90deg, #e4e4e7, #d4d4d8) !important;
+    border-color: #e4e4e7 !important;
+}
+.stButton > button:active { 
+    transform: scale(0.99); 
+}
 
+/* Selectbox dropdown overrides */
 .stSelectbox > div > div {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,255,255,0.12) !important;
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
     border-radius: 10px !important;
-    color: #e2e8f0 !important;
+    color: #f4f4f5 !important;
 }
 
 div[data-testid="stAlert"] {
     border-radius: 10px !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #f4f4f5 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Monochromatic Progress Bar - Clean silver/white */
+.stProgress > div > div > div > div {
+    background-color: #ffffff !important;
 }
 
 /* Hide streamlit default top spacing */
@@ -149,23 +165,24 @@ div[data-testid="stAlert"] {
 </style>
 """, unsafe_allow_html=True)
 
-# ─── Emotion Emoji Map ─────────────────────────────────────────────────────────
+# ─── Emotion Emoji Map (Polished Monochromatic Accents) ────────────────────────
+# Tailored variations of platinum, silver, and bright white to fit the theme
 EMOTION_CONFIG = {
-    "happy":    {"emoji": "😄", "color": "#fbbf24"},
-    "joy":      {"emoji": "😄", "color": "#fbbf24"},
-    "sad":      {"emoji": "😢", "color": "#60a5fa"},
-    "sadness":  {"emoji": "😢", "color": "#60a5fa"},
-    "angry":    {"emoji": "😠", "color": "#f87171"},
-    "anger":    {"emoji": "😠", "color": "#f87171"},
-    "fear":     {"emoji": "😨", "color": "#a78bfa"},
-    "surprise": {"emoji": "😲", "color": "#34d399"},
-    "disgust":  {"emoji": "🤢", "color": "#6ee7b7"},
-    "neutral":  {"emoji": "😐", "color": "#94a3b8"},
+    "happy":    {"emoji": "😄", "color": "#ffffff"}, # Glowing white
+    "joy":      {"emoji": "😄", "color": "#ffffff"},
+    "sad":      {"emoji": "😢", "color": "#a1a1aa"}, # Zinc / Dark Silver
+    "sadness":  {"emoji": "😢", "color": "#a1a1aa"},
+    "angry":    {"emoji": "😠", "color": "#d4d4d8"}, # Medium Silver
+    "anger":    {"emoji": "😠", "color": "#d4d4d8"},
+    "fear":     {"emoji": "😨", "color": "#e4e4e7"}, # Platinum
+    "surprise": {"emoji": "😲", "color": "#f4f4f5"}, # White-Silver
+    "disgust":  {"emoji": "🤢", "color": "#a1a1aa"},
+    "neutral":  {"emoji": "😐", "color": "#d4d4d8"},
 }
 
 def get_emotion_info(emotion: str):
     key = emotion.lower()
-    return EMOTION_CONFIG.get(key, {"emoji": "🤔", "color": "#e2e8f0"})
+    return EMOTION_CONFIG.get(key, {"emoji": "🤔", "color": "#e4e4e7"})
 
 # ─── Session State ─────────────────────────────────────────────────────────────
 if "history" not in st.session_state:
@@ -215,8 +232,8 @@ with st.sidebar:
             st.markdown(f"""
             <div class="history-item">
                 <b>{item['emoji']} {item['emotion'].capitalize()}</b>
-                &nbsp;·&nbsp; <span style="color:#64748b;">{item['source']}</span>
-                <br><span style="color:#94a3b8; font-size:0.75rem;">"{item['text']}"</span>
+                &nbsp;·&nbsp; <span style="color:#71717a;">{item['source']}</span>
+                <br><span style="color:#a1a1aa; font-size:0.75rem;">"{item['text']}"</span>
             </div>
             """, unsafe_allow_html=True)
         
@@ -226,9 +243,9 @@ with st.sidebar:
             st.session_state.last_result = None
             st.rerun()
     else:
-        st.markdown("<p style='color:#64748b; font-size:0.85rem; font-style:italic;'>No recent runs yet.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='color:#71717a; font-size:0.85rem; font-style:italic;'>No recent runs yet.</p>", unsafe_allow_html=True)
 
-# ─── Main Workspace (Completely Borderless and Clean) ─────────────────────────
+# ─── Main Workspace (Monochromatic and Clean) ─────────────────────────────────
 
 # Place a single, custom empty placeholder above text box for the header info
 header_placeholder = st.empty()
@@ -244,8 +261,8 @@ user_input = st.text_area(
 char_count = len(user_input)
 header_placeholder.markdown(f"""
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; padding: 0 2px;">
-    <span style="color:#94a3b8; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em;">Model: <b style="color:#a78bfa;">{model_option.upper()}</b></span>
-    <span style="color:#94a3b8; font-size:0.78rem; font-weight:500;">{char_count} / 1000 chars</span>
+    <span style="color:#71717a; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em;">Model: <b style="color:#ffffff;">{model_option.upper()}</b></span>
+    <span style="color:#71717a; font-size:0.78rem; font-weight:500;">{char_count} / 1000 chars</span>
 </div>
 """, unsafe_allow_html=True)
 
@@ -353,6 +370,6 @@ if st.session_state.last_result:
     </div>
     """, unsafe_allow_html=True)
 
-    # Sleek progress bar
-    st.markdown(f"<div style='font-size:0.85rem; font-weight:500; color:#e2e8f0; margin-bottom:0.2rem; margin-top:0.5rem;'>Confidence Score: {int(res['confidence']*100)}%</div>", unsafe_allow_html=True)
+    # Sleek progress bar (Monochromatic)
+    st.markdown(f"<div style='font-size:0.85rem; font-weight:500; color:#e4e4e7; margin-bottom:0.2rem; margin-top:0.5rem;'>Confidence Score: {int(res['confidence']*100)}%</div>", unsafe_allow_html=True)
     st.progress(res['confidence'])
