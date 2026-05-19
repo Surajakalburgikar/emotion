@@ -201,7 +201,7 @@ def check_backend():
         return False
 
 # ─── Header ───────────────────────────────────────────────────────────────────
-st.markdown('<div class="hero-title">🧠 Emotion Detector AI</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-title"><span style="filter: grayscale(100%); margin-right: 12px; display: inline-block;">🧠</span>Emotion Detector AI</div>', unsafe_allow_html=True)
 
 # Silent health check
 backend_ok = check_backend()
@@ -231,7 +231,7 @@ with st.sidebar:
         for item in st.session_state.history:
             st.markdown(f"""
             <div class="history-item">
-                <b>{item['emoji']} {item['emotion'].capitalize()}</b>
+                <b><span style="filter: grayscale(100%); margin-right: 4px; display: inline-block;">{item['emoji']}</span> {item['emotion'].capitalize()}</b>
                 &nbsp;·&nbsp; <span style="color:#71717a;">{item['source']}</span>
                 <br><span style="color:#a1a1aa; font-size:0.75rem;">"{item['text']}"</span>
             </div>
@@ -343,7 +343,7 @@ if st.session_state.last_result:
     st.markdown(f"""
     <div class="glass-card" style="border-color: {info['color']}44; margin-top:1.5rem; animation: fadeIn 0.5s;">
         <div style="text-align:center;">
-            <div style="font-size:3.5rem; margin-bottom:0.25rem;">{info['emoji']}</div>
+            <div style="font-size:3.5rem; margin-bottom:0.25rem; filter: grayscale(100%); display: inline-block;">{info['emoji']}</div>
             <div style="font-size:1.8rem; font-weight:700; color:{info['color']};
                         text-transform:capitalize; margin-bottom:0.25rem;">
                 {res['emotion']}
