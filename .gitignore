@@ -1,0 +1,55 @@
+# Python pycache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+share/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Project specific local environment variables (CRITICAL SECURITY)
+backend/.env
+
+# Local machine learning models or Hugging Face cache (if downloaded locally in project)
+.cache/
+hf_cache/
+
+# OS system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# SQLite database or database logs (if used in future)
+*.db
+*.sqlite3
